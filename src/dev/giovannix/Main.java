@@ -12,5 +12,7 @@ public class Main {
         list.addLast(15);
         list.addFirst(5);
         list.addLast(20);
+        System.out.println(list.indexOf(10));
+        System.out.println(list.contains(10));
     }
 }

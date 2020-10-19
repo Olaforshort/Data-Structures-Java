@@ -50,4 +50,31 @@ public class LinkedList {
     private boolean isEmpty() {
         return (first == null);
     }
+
+    public int indexOf(int item) {
+        Node current = first;
+        int index = 0;
+        if (isEmpty()) return -1;
+        while(current != null) {
+            if (current.value == item) return index;
+            index++;
+            current = current.next;
+        }
+        return -1;
+    }
+
+    //    public boolean contains(int item) {
+    //        Node current = first;
+    //        if (isEmpty()) return false;
+    //        while(current != null) {
+    //            if (current.value == item) return true;
+    //            current = current.next;
+    //        }
+    //        return false;
+    //    }
+
+    public boolean contains(int item) {
+        return indexOf(item) != -1;
+    }
+
 }
