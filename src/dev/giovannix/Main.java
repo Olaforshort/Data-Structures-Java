@@ -18,5 +18,7 @@ public class Main {
         numbers.insert(30);
         numbers.removeAt(0);
         numbers.print();
+        System.out.println(numbers.indexOf(20));
+        System.out.println(numbers.indexOf(100));
     }
 }

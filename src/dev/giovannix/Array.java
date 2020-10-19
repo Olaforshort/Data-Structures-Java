@@ -50,6 +50,10 @@ public class Array {
         count--; //count represents the total # of elements in the array
     }
 
-
-
+    public int indexOf(int value) {
+        for(int i = 0; i < count; i++) {
+            if (items[i] == value) return i;
+        }
+        return -1;
+    }
 }
