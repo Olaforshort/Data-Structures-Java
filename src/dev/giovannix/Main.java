@@ -13,6 +13,9 @@ public class Main {
 
         Array numbers;
         numbers = new Array(3);
+        numbers.insert(10);
+        numbers.insert(20);
+        numbers.insert(30);
         numbers.print();
     }
 }
