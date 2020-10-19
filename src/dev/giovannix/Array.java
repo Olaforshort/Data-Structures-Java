@@ -27,6 +27,29 @@ public class Array {
         items[count++] = item;
     }
 
+    //    public void removeAt(int index) {
+    //        if(index < count) {
+    //            int[] newItems = new int[items.length];
+    //            int j = 0;
+    //            for (int i = 0; i < count - 1; i++) {
+    //                if (i == index) j++;
+    //                newItems[i] = items[j++];
+    //            }
+    //            items = newItems;
+    //            count--;
+    //        } else {
+    //            throw new IllegalArgumentException();
+    //        }
+    //    }
+
+    public void removeAt(int index) {
+        if (index < 0 || index >= count)
+            throw new IllegalArgumentException();
+        for(int i = index; i < count-1; i++)
+            items[i] = items[i+1];
+        count--; //count represents the total # of elements in the array
+    }
+
 
 
 }
