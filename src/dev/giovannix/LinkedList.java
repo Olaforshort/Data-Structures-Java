@@ -77,4 +77,39 @@ public class LinkedList {
         return indexOf(item) != -1;
     }
 
+    public void removeFirst() {
+        if (isEmpty())
+            throw new NoSuchElementException();
+        if (first == last) {
+            first = last = null;
+            return;
+        }
+        Node second = first.next;
+        first.next = null;
+        first = second;
+    }
+
+    public void removeLast() {
+        if (isEmpty())
+            throw new NoSuchElementException();
+        if (first == last) {
+            first = last = null;
+            return;
+        }
+        Node previous = getPrevious(last);
+        last = previous;
+        last.next = null;
+    }
+
+    private Node getPrevious(Node last) {
+        Node current = first;
+        while(current != null) {
+            if (current.next == last) {
+                return current;
+            }
+            current = current.next;
+        }
+        return null;
+    }
+
 }
