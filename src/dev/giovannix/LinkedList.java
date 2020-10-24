@@ -5,6 +5,7 @@ import java.util.NoSuchElementException;
 public class LinkedList {
     private Node first;
     private Node last;
+    private int size = 0;
 
     private class Node {
         private int value;
@@ -23,6 +24,7 @@ public class LinkedList {
             last.next = node;
             last = node;
         }
+        size++;
     }
 
     //    public void addFirst(int item) {
@@ -45,6 +47,7 @@ public class LinkedList {
             node.next = first;
             first = node;
         }
+        size++;
     }
 
     private boolean isEmpty() {
@@ -80,25 +83,25 @@ public class LinkedList {
     public void removeFirst() {
         if (isEmpty())
             throw new NoSuchElementException();
-        if (first == last) {
-            first = last = null;
-            return;
+        if (first == last) first = last = null;
+        else {
+            Node second = first.next;
+            first.next = null;
+            first = second;
         }
-        Node second = first.next;
-        first.next = null;
-        first = second;
+        size--;
     }
 
     public void removeLast() {
         if (isEmpty())
             throw new NoSuchElementException();
-        if (first == last) {
-            first = last = null;
-            return;
+        if (first == last) first = last = null;
+        else {
+            Node previous = getPrevious(last);
+            last = previous;
+            last.next = null;
         }
-        Node previous = getPrevious(last);
-        last = previous;
-        last.next = null;
+        size--;
     }
 
     private Node getPrevious(Node last) {
@@ -112,4 +115,10 @@ public class LinkedList {
         return null;
     }
 
+    //O(1)
+    public int size() {
+        return size;
+    }
+
 }
+
