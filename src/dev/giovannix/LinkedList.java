@@ -27,17 +27,6 @@ public class LinkedList {
         size++;
     }
 
-    //    public void addFirst(int item) {
-    //        Node node = new Node(item);
-    //        if (first == null) {
-    //            first = last = node;
-    //        }
-    //        else {
-    //            first = first.next;
-    //            first = node;
-    //        }
-    //    }
-
     public void addFirst(int item) {
         Node node = new Node(item);
 
@@ -65,16 +54,6 @@ public class LinkedList {
         }
         return -1;
     }
-
-    //    public boolean contains(int item) {
-    //        Node current = first;
-    //        if (isEmpty()) return false;
-    //        while(current != null) {
-    //            if (current.value == item) return true;
-    //            current = current.next;
-    //        }
-    //        return false;
-    //    }
 
     public boolean contains(int item) {
         return indexOf(item) != -1;
@@ -115,7 +94,6 @@ public class LinkedList {
         return null;
     }
 
-    //O(1)
     public int size() {
         return size;
     }
